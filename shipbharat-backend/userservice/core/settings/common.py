@@ -2,6 +2,7 @@
 from os.path import abspath, basename, dirname, join, normpath
 import sys
 import os
+from datetime import timedelta
 
 
 # ##### PATH CONFIGURATION ################################
@@ -143,6 +144,15 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     )
+}
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'LEEWAY': 0,
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
 #Swagger Settings
