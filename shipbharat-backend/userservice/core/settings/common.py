@@ -50,6 +50,7 @@ DEFAULT_APPS = [
     'drf_yasg',
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
     'corsheaders',
     'apps.v1.user',
     'apps.v1.store',
