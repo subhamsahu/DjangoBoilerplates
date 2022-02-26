@@ -50,6 +50,7 @@ DEFAULT_APPS = [
     'drf_yasg',
     'rest_framework',
     'rest_framework_simplejwt',
+    'corsheaders',
     'apps.v1.user',
     'apps.v1.store',
 ]
@@ -61,6 +62,7 @@ AUTH_USER_MODEL = "user.CustomUser"
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -171,3 +173,10 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'dassambuds@gmail.com'
 EMAIL_HOST_PASSWORD = 'dassambuds@123'
+
+
+#CORS Allowed Origins Enabled only certain webapps to connect to our api endpoints
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://127.0.0.1:9000",
+]
